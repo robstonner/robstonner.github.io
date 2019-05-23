@@ -9,7 +9,7 @@ body {
 }
 .center-container {
     justify-content: center;
-    background-color: white;
+    background-color: rgb(245, 245, 245);
     padding: 2%;
     margin: 10px;
 }
@@ -42,7 +42,7 @@ a {
     text-decoration: none;
 }
 a:link {
-    color: rgb(0, 255, 106);
+    color: rgb(0, 255, 136);
 }
 a:visited {
     color: rgb(0, 172, 72);
