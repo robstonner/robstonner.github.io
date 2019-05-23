@@ -1,0 +1,49 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: rgb(215, 255, 232);
+    font-family: Courier;
+    color: rgb(68, 68, 68);
+    margin: 0px;
+}
+.center-container {
+    justify-content: center;
+    background-color: white;
+    padding: 2%;
+    margin: 10px;
+}
+.title-name {
+    font-size: 60px;
+    text-align: center;
+    padding: 1%;
+    font-weight: bold;
+}
+.title-subtitle {
+    color: rgb(133, 133, 133);
+    font-size: 25px;
+    text-align: center;
+    padding: 1%;
+    font-weight: bold;
+}
+.body-title {
+    color: rgb(133, 133, 133);
+    font-size: 40px;
+    padding: 1%;
+    font-weight: bold;
+}
+.body-text {
+    color: rgb(97, 97, 97);
+    font-size: 20px;
+    padding: 1%;
+    padding-left: 5%;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: rgb(0, 255, 106);
+}
+a:visited {
+    color: rgb(0, 172, 72);
+}
