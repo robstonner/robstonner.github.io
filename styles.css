@@ -1,53 +1,67 @@
+/*
+    Tag Overrides
+*/
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
-    background-color: rgb(156, 156, 156);
-    font-family: Helvetica, sans-serif;
-    color: rgb(68, 68, 68);
-    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgrey;
 }
-.center-container {
-    justify-content: center;
-    background-color: white;
-    padding: 2%;
-    margin: 2% 10% 2% 10%;
-    border-radius: 8px;
-}
-#name-title {
-    font-size: 4em;
-    text-align: center;
-    padding: 1%;
+
+
+/*
+    Custom IDs
+*/
+
+#title-main-left {
+    font-size: 2.5em;
     font-weight: bold;
+    color: rgb(59, 59, 59);
+    float: right !important;
 }
-.name-subtitle {
-    color: rgb(133, 133, 133);
-    font-size: 1em;
-    text-align: center;
-    padding: 1%;
+
+
+/*
+    Custom Classes
+*/
+
+.title-main-right {
+    font-size: 2.5em;
     font-weight: bold;
+    color: rgb(25, 175, 70);
+    float: left;
+    margin-left: 3%;
 }
-.body-title {
-    color: rgb(133, 133, 133);
-    font-size: 40px;
-    font-weight: bold;
-    padding: 0 0 2% 0;
+
+.navbar-left {
+    height: 10%;
+    width: 50%;
+    float: left;
+    text-align: right;
 }
-.body-text {
-    color: rgb(97, 97, 97);
-    font-size: 20px;
-    padding: 1%;
-    padding-left: 5%;
-    margin: 0 0 0 2%;
-    border: solid rgb(153, 153, 153);
-    border-width: 0 0 0 5px;
+
+.navbar-right {
+    height: 10%;
+    width: 50%;
+    float: right;
+    text-align: left;
 }
-a {
-    text-decoration: none;
-}
-a:link {
-    color: rgb(0, 255, 106);
-}
-a:visited {
-    color: rgb(0, 172, 72);
+
+
+/*
+    Bootstrap Overrides
+*/
+
+.nav,
+.navbar-default {
+    position: sticky;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(228, 228, 228);
+    box-shadow: 20px 0px 5px rgba(0, 0, 0, 0.2);
 }
