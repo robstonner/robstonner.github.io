@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
-.md h1 {
+.md h1,
+.nonumberh1 {
     font-family: 'Rakkas', sans-serif;
     color: #000000;
     background-color: #ffffff;
