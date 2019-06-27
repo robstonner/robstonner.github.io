@@ -62,7 +62,6 @@ contents,
 
 .md div.title,
 .md div.subtitle,
-.md h1,
 .md h2,
 .md h3,
 .md h4,
@@ -94,17 +93,6 @@ contents,
 
 .md div.afterTitles+p {
     margin-top: 30px;
-}
-
-.md h1 {
-    font-size: 175%;
-    margin-bottom: 25px;
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-top: 25px;
-    border-bottom: none;
-    border-top: 6px solid #5a5a5a;
 }
 
 .md h2 {
@@ -206,7 +194,6 @@ contents,
     }
     .md div.title,
     .md div.subtitle,
-    .md h1,
     .md h2,
     .md h3,
     .md h4,
@@ -283,7 +270,6 @@ contents,
         padding-right: 15px;
     }
     .md div.title,
-    .md h1,
     .md h2,
     .md h3,
     .md h4,
