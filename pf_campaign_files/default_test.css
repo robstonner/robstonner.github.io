@@ -2,7 +2,6 @@
 body {
     font-weight: 400;
     font-size: 200%;
-    font-family: Arial, Helvetica, "sans serif";
     text-align: left;
     line-height: 170%;
 }
@@ -67,7 +66,6 @@ contents,
 .md h4,
 .md h5,
 .md h6 {
-    font-family: 'Roboto', Arial, Helvetica, "sans serif";
     font-weight: 300;
 }
 
