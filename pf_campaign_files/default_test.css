@@ -16,30 +16,8 @@ body {
     color: #403539;
     background-color: #ded7d1;
     margin: 9vh auto 5vh auto;
-    padding: 4vh auto auto auto;
+    padding-top: 6vh;
     border-radius: 12px;
-}
-
-
-/*
-    Table of Contents
-*/
-
-.md .longTOC {
-    display: block;
-    white-space: nowrap;
-    width: 170px;
-    border-right: 1px solid #777;
-    overflow-y: scroll;
-    font-size: 15px;
-    font-family: inherit;
-    background: #202020;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 10px;
 }
 
 
