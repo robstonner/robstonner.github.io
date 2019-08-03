@@ -29,9 +29,9 @@ body {
 .md h1 {
     z-index: 1;
     font-family: 'Rakkas', sans-serif;
-    font-size: 8vh;
+    font-size: 60px;
     font-weight: normal;
-    line-height: 9vh;
+    line-height: 140%;
     color: #403539;
     background-color: #dbc8ab;
     margin: 0 0 0 0;
@@ -53,10 +53,10 @@ body {
 .md h2 {
     font-family: 'Rakkas', sans-serif;
     color: #403539;
+    font-size: 36px;
+    line-height: 160%;
     text-align: center;
     font-weight: bold;
-    font-size: 5vh;
-    line-height: 5.5vh;
     margin-bottom: 0;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
@@ -67,10 +67,10 @@ body {
 .md h3 {
     font-family: 'Spectral', sans-serif;
     color: #403539;
+    font-size: 26px;
+    line-height: 160%;
     text-align: center;
     font-weight: bold;
-    font-size: 3.5vh;
-    line-height: 4vh;
     margin-bottom: 0;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
@@ -81,11 +81,6 @@ body {
 /*
     Text Content
 */
-
-.md p {
-    font-size: 2vh;
-    line-height: 2.5vh;
-}
 
 .md blockquote.fancyquote {
     margin: auto 30px auto 30px;
@@ -98,8 +93,6 @@ body {
 
 .md span.fancyquote {
     font-family: 'Spectral', sans-serif;
-    font-size: 2vh;
-    line-height: 3vh;
     color: #636069;
 }
 
@@ -109,17 +102,18 @@ body {
 */
 
 .md .admonition.loot {
-    font-size: 1.75vh;
-    line-height: 2vh;
-    border-left: 20px solid rgb(107, 161, 109);
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(107, 161, 109);
+    border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);
     border-radius: 0;
 }
 
 .md .admonition.loot .admonition-title {
-    font-size: 2.5vh;
-    line-height: 2.5vh;
+    font-size: 24px;
+    line-height: 160%;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     border: none;
@@ -130,23 +124,68 @@ body {
 }
 
 .md .admonition.encounter {
-    font-size: 1.75vh;
-    line-height: 2vh;
-    border-left: 20px solid rgb(231, 145, 80);
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(161, 72, 72);
+    border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);
     border-radius: 0;
 }
 
 .md .admonition.encounter .admonition-title {
-    font-size: 2.5vh;
-    line-height: 2.5vh;
+    font-size: 24px;
+    line-height: 160%;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     border: none;
 }
 
 .md .admonition.encounter::before {
+    content: none;
+}
+
+.md .admonition.info {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(107, 137, 161);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.info .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.info::before {
+    content: none;
+}
+
+.md .admonition.hazard {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(209, 150, 54);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.hazard .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.hazard::before {
     content: none;
 }
 
