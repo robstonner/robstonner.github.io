@@ -77,6 +77,34 @@ body {
     border: none;
 }
 
+.md .nonumberh4,
+.md h4 {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    font-size: 22px;
+    line-height: 160%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .nonumberh5,
+.md h5 {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
 
 /*
     Text Content
