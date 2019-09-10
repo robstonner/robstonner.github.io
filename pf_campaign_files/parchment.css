@@ -15,7 +15,7 @@ body {
     font-family: 'Spectral', sans-serif;
     color: #403539;
     background-color: #ded7d1;
-    margin: 9vh auto 5vh auto;
+    margin: 100px auto 5vh auto;
     padding-top: 6vh;
     border-radius: 12px;
 }
@@ -29,7 +29,7 @@ body {
 .md h1 {
     z-index: 1;
     font-family: 'Rakkas', sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: normal;
     line-height: 140%;
     color: #403539;
@@ -37,8 +37,6 @@ body {
     margin: 0 0 0 0;
     border: none;
     padding: 10px 0 10px 20px;
-    width: auto;
-    height: auto;
     box-shadow: 0 0 20px 1px #000000;
     position: fixed;
     top: 0;
