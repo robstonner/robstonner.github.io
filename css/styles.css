@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
+@import url('http://dotsies.org/dotsies.css');
+
+#login {
+    color: #403539;
+    background-color: #dbc8ab;
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+#login-btn, #login-info {
+    font-family: 'Spectral', serif;
+}
+
+#navbar {
+    font-family: 'Rakkas', serif;
+    font-size: 3rem;
+    box-shadow: -10px 0 15px -10px #222222;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+div#nav-btn>span::before {
+    font-size: 5rem;
+}

@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
+@import url('http://dotsies.org/dotsies.css');
+
+/*
+    Body and HTML
+*/
+
+
+/*    background-color: #636069; */
+
+span.md {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    background-color: #ded7d1;
+    border-radius: 12px;
+    margin: 0 0 5% 0;
+    padding: 0 0 5% 0;
+}
+
+@media (min-width: 640px) {
+    span.md {
+        font-family: 'Spectral', sans-serif;
+        color: #403539;
+        background-color: #ded7d1;
+        border-radius: 12px;
+        margin: 0 10rem 5% 10rem;
+        padding: 0 0 5% 0;
+    }
+}
+
+span.md * {
+    margin: 0 5% 2% 5%;
+}
+
+span.md p:first-of-type {
+    display: none;
+}
+
+/*
+    Headings
+*/
+
+.md .nonumberh1,
+.md h1 {
+    z-index: 1;
+    font-family: 'Rakkas', sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 140%;
+    color: #403539;
+    background-color: #dbc8ab;
+    margin: 0 0 5% 0;
+    border: none;
+    padding: 10px 0 10px 20px;
+    box-shadow: 0 10px 15px -10px #222222;
+}
+
+@media (min-width: 640px) {
+    .md .nonumberh1,
+    .md h1 {
+        z-index: 1;
+        font-family: 'Rakkas', sans-serif;
+        font-size: 40px;
+        font-weight: normal;
+        line-height: 140%;
+        color: #403539;
+        background-color: #dbc8ab;
+        margin: 0 -10rem 5% -10rem;
+        border: none;
+        padding: 10px 0 10px 20px;
+        box-shadow: 0 10px 15px -10px #222222;
+    }
+}
+
+.md .nonumberh2,
+.md h2 {
+    font-family: 'Rakkas', sans-serif;
+    color: #403539;
+    font-size: 36px;
+    line-height: 160%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .nonumberh3,
+.md h3 {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    font-size: 26px;
+    line-height: 160%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .nonumberh4,
+.md h4 {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    font-size: 22px;
+    line-height: 160%;
+    text-align: center;
+    font-weight: bold;
+    font-style: oblique;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .nonumberh5,
+.md h5 {
+    font-family: 'Spectral', sans-serif;
+    color: #403539;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: center;
+    font-style: oblique;
+    margin-bottom: 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+
+/*
+    Text Content
+*/
+
+.md blockquote.fancyquote {
+    margin: auto 30px auto 30px;
+}
+
+.md blockquote.fancyquote::before,
+.md span.fancyquote::after {
+    color: #636069;
+}
+
+.md span.fancyquote {
+    font-family: 'Spectral', sans-serif;
+    color: #636069;
+}
+
+
+/*
+    Admonitions
+*/
+
+.md .admonition.loot {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(107, 161, 109);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.loot .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.loot::before {
+    content: none;
+}
+
+.md .admonition.encounter {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(161, 72, 72);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.encounter .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.encounter::before {
+    content: none;
+}
+
+.md .admonition.info {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(107, 137, 161);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.info .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.info::before {
+    content: none;
+}
+
+.md .admonition.hazard {
+    font-size: 18px;
+    line-height: 140%;
+    border-left: 20px groove rgb(209, 150, 54);
+    border-bottom: 20px solid transparent;
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.md .admonition.hazard .admonition-title {
+    font-size: 24px;
+    line-height: 160%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: none;
+}
+
+.md .admonition.hazard::before {
+    content: none;
+}
+
+
+/*
+    Tables
+*/
+
+.md div.table {
+    overflow-x: scroll;
+}
+
+.md table.table {
+    overflow-x: scroll;
+    margin: 0 0 0 0;
+}
+
+.md table.table th {
+    background-color: #98aeab;
+    color: #eeeeee;
+    border: 1px solid #403539;
+}
+
+.md table.table td {
+    border: 1px solid #403539;
+}
+
+
+/*
+    Footer
+*/
+
+div.markdeepFooter {
+    color: #403539;
+}
+
+
+/*
+    Misc
+*/
+
+a {
+    color: #98aeab;
+}
+
+a:visited {
+    color: #525e5b;
+}

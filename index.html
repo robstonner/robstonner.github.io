@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="css/tailwind.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="md/parchment.css" rel="stylesheet" type="text/css">
+    <link href="glyphicons/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg-gray-600 sm:m-auto">
+    <div id="header" name="header" class="fixed top-0 bottom-0 right-0 flex flex-row-reverse w-full h-full z-30">
+    </div>
+    <div id="page-content" class="relative flex w-full h-full z-20">
+    </div>
+</body>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+<script>
+    // Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAtWj5Qb0YMHtEqeEBDV7NwIeEvKP4tHsU",
+        authDomain: "robstonner-github-io.firebaseapp.com",
+        databaseURL: "https://robstonner-github-io.firebaseio.com",
+        projectId: "robstonner-github-io",
+        storageBucket: "robstonner-github-io.appspot.com",
+        messagingSenderId: "90222904072",
+        appId: "1:90222904072:web:075887d8a4f72b8ec0a2bd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+</script>
+
+<!-- Custom Javascript -->
+<script src="app.js"></script>
+<script src="util.js"></script>
+
+<!-- Markdeep -->
+<script>
+    window.markdeepOptions = {
+        mode: 'script'
+    };
+</script>
+<script src="md/markdeep.min.js" charset="utf-8"></script>
+
+</html>
