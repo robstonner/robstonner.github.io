@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     db.collection("tokens").doc("1zGj3cwL0U47TLwagZU2").get().then((snapshot) => {
                         gitauth = snapshot.data().gitauth;
                     });
-                    console.log(gitauth);
                     util.replace(util.qid("header"), html);
                     db.collection("users").doc(user.uid).get().then((snapshot) => {
                         data = snapshot.data().documents;
