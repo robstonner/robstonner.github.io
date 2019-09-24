@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((response) => {
                     return response.text();
                 }).then((html) => {
+                    var gitauth;
+                    db.collection("tokens").doc("1zGj3cwL0U47TLwagZU2").get().then((snapshot) => {
+                        gitauth = snapshot.data().gitauth;
+                    });
+                    console.log(gitauth);
                     util.replace(util.qid("header"), html);
                     db.collection("users").doc(user.uid).get().then((snapshot) => {
                         data = snapshot.data().documents;
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     method: "GET",
                                     headers: {
                                         "Accept": "application/vnd.github.v3+json",
-                                        "Authorization": "TOKEN 47f20d6e5615e9c843f44b13daa84367c60580a5"
+                                        "Authorization": "TOKEN " + gitauth
                                     }
                                 }
                             ).then((response) => {
@@ -38,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             }).then((md) => {
                                 var html = util.mdf(atob(md.content));
                                 document.getElementById("page-content").innerHTML = html;
-                            });
+                            }).catch((e) => {
+                                console.log(e);
+                            })
                         }
                     });
                     util.qid("navbar").style.display = "none";
