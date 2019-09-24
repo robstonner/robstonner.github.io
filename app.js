@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         var navbar = util.qid("navbar");
                         data.forEach((id) => {
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="p-2 bg-yellow-700 hover:bg-yellow-800 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="p-2 border-b border-gray-900 bg-yellow-900 hover:bg-yellow-800 cursor-pointer">' + snapshot.data().title + '</div>';
                             });
                     });
                     }).catch((e) => {

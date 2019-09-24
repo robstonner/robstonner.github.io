@@ -22,5 +22,9 @@
 }
 
 div#nav-btn>span::before {
-    font-size: 5rem;
+    font-size: 7.5rem;
+}
+
+div#nav-btn>span {
+    transform: rotate(90deg);
 }
