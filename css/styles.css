@@ -45,6 +45,14 @@ div#nav-btn>span::before {
     font-size: 7.5rem;
 }
 
-div#nav-btn>span {
+input#nav-btn>span {
     transform: rotate(90deg);
+}
+
+input#login-username, input#login-password {
+    font-size: 2.5rem;
+}
+
+button#login-btn {
+    font-size: 3rem;
 }
