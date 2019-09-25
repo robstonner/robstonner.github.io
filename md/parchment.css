@@ -17,6 +17,7 @@ span.md {
     border-radius: 12px;
     margin: 0 0 5% 0;
     padding: 0 0 5% 0;
+    position: relative;
 }
 
 @media (min-width: 640px) {
@@ -27,6 +28,7 @@ span.md {
         border-radius: 12px;
         margin: 0 10rem 5% 10rem;
         padding: 0 0 5% 0;
+        position: relative;
     }
 }
 

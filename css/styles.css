@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
 @import url('http://dotsies.org/dotsies.css');
 
+html {
+    scroll-behavior: smooth;
+}
+
 #login {
     color: #403539;
     background-color: #dbc8ab;
@@ -13,12 +17,28 @@
     font-family: 'Spectral', serif;
 }
 
+#page-content {
+    transition: 0.5s;
+}
+
+#header {
+    transition: 0.5s;
+}
+
 #navbar {
     font-family: 'Rakkas', serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     box-shadow: -10px 0 15px -10px #222222;
     overflow: scroll;
     scrollbar-width: none;
+    transition: 0.5s;
+}
+
+div#navbar>div {
+    overflow: hidden;
+    word-wrap: none;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
 div#nav-btn>span::before {

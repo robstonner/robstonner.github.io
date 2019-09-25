@@ -17,13 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         var navbar = util.qid("navbar");
                         data.forEach((id) => {
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="p-2 border-b border-gray-900 bg-yellow-900 hover:bg-yellow-800 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 p-3 pl-5 border-l-8 border-double border-yellow-500 bg-yellow-900 hover:bg-yellow-800 cursor-pointer">' + snapshot.data().title + '</div>';
                             });
                     });
                     }).catch((e) => {
                         console.log(e);
                     });
+                    util.qid("page-content").style.opacity = "1";
                     util.on(util.qid("navbar"), "click", (el) => {
+                        util.qid("page-content").style.opacity = "0";
                         if (el.target.id == "logout-btn") {
                             auth.signOut();
                         } else {
@@ -41,22 +43,32 @@ document.addEventListener("DOMContentLoaded", () => {
                                 return response.json();
                             }).then((md) => {
                                 var html = util.mdf(atob(md.content));
-                                document.getElementById("page-content").innerHTML = html;
+                                util.qid("page-content").innerHTML = html;
+                                util.qid("page-content").style.opacity = "1";
                             }).catch((e) => {
                                 console.log(e);
                             })
                         }
                     });
-                    util.qid("navbar").style.display = "none";
+                    util.qid("navbar").style.width = "0%";
                     util.on(util.qid("nav-btn"), "click", () => {
-                        if (util.qid("navbar").style.display == "none") {
-                            util.qid("navbar").style.display = "block";
+                        if (window.innerWidth >= 640) {
+                            if (util.qid("navbar").style.width == "0%") {
+                                util.qid("navbar").style.width = "50%";
+                            } else {
+                                util.qid("navbar").style.width = "0%";
+                            }
                         } else {
-                            util.qid("navbar").style.display = "none";
+                            if (util.qid("navbar").style.width == "0%") {
+                                util.qid("navbar").style.width = "66%";
+                            } else {
+                                util.qid("navbar").style.width = "0%";
+                            }
                         }
                     });
                 });
         } else {
+            util.qid("header").style.opacity = "0";
             util.clear(util.qid("page-content"));
             console.log("user is logged out");
             fetch("views/login.html")
@@ -64,12 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     return response.text();
                 }).then((html) => {
                     util.replace(util.qid("header"), html);
+                    util.qid("header").style.opacity = "1";
                     var username = document.getElementById("login-username");
                     var password = document.getElementById("login-password");
                     util.on(util.qid("login-btn"), "click", () => {
-                        auth.signInWithEmailAndPassword(username.value, password.value).then((response) => {
-                            console.log(response);
-                        }).catch((e) => {
+                        auth.signInWithEmailAndPassword(username.value, password.value).catch((e) => {
                             console.log("Error: " + e.code + ": " + e.message);
                             util.flash(util.qid("login-info"), "I don't know you");
                         });
