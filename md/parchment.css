@@ -81,6 +81,11 @@ span.md p:first-of-type {
         padding: 10px 0 10px 20px;
         box-shadow: 0 10px 15px -10px #222222;
     }
+
+    .md h1 {
+        text-align: left;
+        margin: 0 5% 2% 5%;
+    }
 }
 
 .md .nonumberh2,
