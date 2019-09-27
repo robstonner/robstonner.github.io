@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         util.qid("page-content").style.opacity = "0";
                         if (el.target.id == "logout-btn") {
                             auth.signOut();
+                        } else if (el.target.id == "navbar") {
+                            return;
                         } else {
                             console.log("git endpoint called");
                             var endpoint = el.target.id;
