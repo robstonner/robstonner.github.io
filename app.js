@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         var navbar = util.qid("navbar");
                         data.forEach((id) => {
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 p-3 pl-5 border-l-8 border-double border-yellow-500 bg-yellow-900 hover:bg-yellow-800 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 p-3 pl-5 border-l-8 border-double border-yellow-500 bg-yellow-900 hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
                             });
                     });
                     }).catch((e) => {
@@ -51,18 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     });
                     util.qid("navbar").style.width = "0%";
-                    util.on(util.qid("nav-btn"), "click", () => {
+                    util.qid("nav-bg").style.display = "none";
+                    util.onall([util.qid("nav-btn"), util.qid("nav-bg")], "click", () => {
                         if (window.innerWidth >= 640) {
                             if (util.qid("navbar").style.width == "0%") {
                                 util.qid("navbar").style.width = "50%";
+                                util.qid("nav-bg").style.display = "block";
                             } else {
                                 util.qid("navbar").style.width = "0%";
+                                util.qid("nav-bg").style.display = "none";
                             }
                         } else {
                             if (util.qid("navbar").style.width == "0%") {
                                 util.qid("navbar").style.width = "66%";
+                                util.qid("nav-bg").style.display = "block";
                             } else {
                                 util.qid("navbar").style.width = "0%";
+                                util.qid("nav-bg").style.display = "none";
                             }
                         }
                     });

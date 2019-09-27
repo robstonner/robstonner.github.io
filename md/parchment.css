@@ -34,6 +34,7 @@ span.md {
 
 span.md * {
     margin: 0 5% 2% 5%;
+    text-align: justify;
 }
 
 span.md p:first-of-type {
@@ -52,11 +53,17 @@ span.md p:first-of-type {
     font-weight: normal;
     line-height: 140%;
     color: #403539;
+    text-justify: none;
     background-color: #dbc8ab;
     margin: 0 0 5% 0;
     border: none;
     padding: 10px 0 10px 20px;
     box-shadow: 0 10px 15px -10px #222222;
+}
+
+.md h1 {
+    text-align: left;
+    margin: 0 5% 2% 5%;
 }
 
 @media (min-width: 640px) {
@@ -90,11 +97,16 @@ span.md p:first-of-type {
     border: none;
 }
 
+.md h2 {
+    text-align: left;
+    margin: 0 5% 2% 5%;
+}
+
 .md .nonumberh3,
 .md h3 {
     font-family: 'Spectral', sans-serif;
     color: #403539;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 160%;
     text-align: center;
     font-weight: bold;
@@ -102,13 +114,18 @@ span.md p:first-of-type {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     border: none;
+}
+
+.md h3 {
+    text-align: left;
+    margin: 0 5% 2% 5%;
 }
 
 .md .nonumberh4,
 .md h4 {
     font-family: 'Spectral', sans-serif;
     color: #403539;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 160%;
     text-align: center;
     font-weight: bold;
@@ -119,11 +136,16 @@ span.md p:first-of-type {
     border: none;
 }
 
+.md h4 {
+    text-align: left;
+    margin: 0 5% 2% 5%;
+}
+
 .md .nonumberh5,
 .md h5 {
     font-family: 'Spectral', sans-serif;
     color: #403539;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 160%;
     text-align: center;
     font-style: oblique;
@@ -131,6 +153,11 @@ span.md p:first-of-type {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     border: none;
+}
+
+.md h5 {
+    text-align: left;
+    margin: 0 5% 2% 5%;
 }
 
 
@@ -138,8 +165,13 @@ span.md p:first-of-type {
     Text Content
 */
 
+.md p, .md ul, .md ol {
+    font-size: 18px;
+}
+
 .md blockquote.fancyquote {
     margin: auto 30px auto 30px;
+    padding: 0 30px 0 30px;
 }
 
 .md blockquote.fancyquote::before,
@@ -149,6 +181,7 @@ span.md p:first-of-type {
 
 .md span.fancyquote {
     font-family: 'Spectral', sans-serif;
+    font-size: 18px;
     color: #636069;
 }
 
@@ -160,7 +193,7 @@ span.md p:first-of-type {
 .md .admonition.loot {
     font-size: 18px;
     line-height: 140%;
-    border-left: 20px groove rgb(107, 161, 109);
+    border-left: 20px solid rgb(107, 161, 109);
     border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);
@@ -182,7 +215,7 @@ span.md p:first-of-type {
 .md .admonition.encounter {
     font-size: 18px;
     line-height: 140%;
-    border-left: 20px groove rgb(161, 72, 72);
+    border-left: 20px solid rgb(161, 72, 72);
     border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);
@@ -204,7 +237,7 @@ span.md p:first-of-type {
 .md .admonition.info {
     font-size: 18px;
     line-height: 140%;
-    border-left: 20px groove rgb(107, 137, 161);
+    border-left: 20px solid rgb(107, 137, 161);
     border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);
@@ -226,7 +259,7 @@ span.md p:first-of-type {
 .md .admonition.hazard {
     font-size: 18px;
     line-height: 140%;
-    border-left: 20px groove rgb(209, 150, 54);
+    border-left: 20px solid rgb(209, 150, 54);
     border-bottom: 20px solid transparent;
     padding: 5px 5px 5px 10px;
     background-color: rgb(0, 0, 0, 0);

@@ -56,3 +56,7 @@ input#login-username, input#login-password {
 button#login-btn {
     font-size: 3rem;
 }
+
+div#nav-bg {
+    transition: 0.5s;
+}

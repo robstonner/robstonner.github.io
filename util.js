@@ -18,6 +18,11 @@ var util = {
     on: function(el, event, func) {
         el.addEventListener(event, func);
     },
+    onall: function(els, event, func) {
+        for (el in els) {
+            els[el].addEventListener(event, func);
+        }
+    },
     mdf: function(md) {
         return window.markdeep.format(md);
     },
