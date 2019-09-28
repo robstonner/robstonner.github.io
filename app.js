@@ -13,13 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     util.replace(util.qid("header"), html);
                     db.collection("users").doc(user.uid).get().then((snapshot) => {
-                        var bgColors = ["bg-red-800", "bg-orange-700", "bg-green-700", "bg-teal-800", "bg-pink-800"];
+                        var bgColors = ["bg-red-800", "bg-teal-800", "bg-orange-700", "bg-green-700"];
                         data = snapshot.data().documents;
                         var navbar = util.qid("navbar");
+                        var i = 0;
                         data.forEach((id) => {
-                            var rand = bgColors[Math.floor(Math.random() * bgColors.length)];
+                            var color = bgColors[i];
+                            i++;
+                            if (i > 3) {
+                                i = 0;
+                            }
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 mb-4 p-3 pl-5 ' + rand + ' hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 mb-4 p-3 pl-5 ' + color + ' hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
                             });
                     });
                     }).catch((e) => {
@@ -75,6 +80,26 @@ document.addEventListener("DOMContentLoaded", () => {
                             }
                         }
                     });
+                    // util.on(util.qid("test"), "click", () => {
+                    //     console.log("test endpoint called");
+                    //     fetch("https://api.github.com/repos/robstonner/pf_campaign/git/blobs/acaf6dbf4ca37ebe997b99744c7db242208bd6d6",
+                    //         {
+                    //             method: "GET",
+                    //             headers: {
+                    //                 "Accept": "application/vnd.github.v3+json",
+                    //                 "Authorization": "TOKEN " + gitauth
+                    //             }
+                    //         }
+                    //     ).then((response) => {
+                    //         return response.json();
+                    //     }).then((content) => {
+                    //         console.log("page content acquired");
+                    //         console.log(content);
+                    //         util.qid("image").src = "data:image/png;base64, " + content.content;
+                    //     }).catch((e) => {
+                    //         console.log(e);
+                    //     });
+                    // });
                 });
         } else {
             util.qid("header").style.opacity = "0";
