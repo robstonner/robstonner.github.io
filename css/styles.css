@@ -7,6 +7,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    visibility: visible !important;
+}
+
 #login {
     color: #403539;
     background-color: #dbc8ab;

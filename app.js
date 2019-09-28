@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ).then((response) => {
                                 return response.json();
                             }).then((md) => {
+                                console.log("page content acquired");
                                 var html = util.mdf(atob(md.content));
                                 util.qid("page-content").innerHTML = html;
                                 util.qid("page-content").style.opacity = "1";
