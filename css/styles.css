@@ -39,6 +39,13 @@ div#navbar>div {
     word-wrap: none;
     white-space: nowrap;
     transition: 0.3s;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 1.25rem;
+}
+
+div#navbar>div:hover {
+    margin-left: 0.5rem;
 }
 
 div#nav-btn>span::before {

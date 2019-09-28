@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     util.replace(util.qid("header"), html);
                     db.collection("users").doc(user.uid).get().then((snapshot) => {
+                        var bgColors = ["bg-red-800", "bg-orange-700", "bg-green-700", "bg-teal-800", "bg-pink-800"];
                         data = snapshot.data().documents;
                         var navbar = util.qid("navbar");
                         data.forEach((id) => {
+                            var rand = bgColors[Math.floor(Math.random() * bgColors.length)];
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 p-3 pl-5 border-l-8 border-double border-yellow-500 bg-yellow-900 hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 mb-4 p-3 pl-5 ' + rand + ' hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
                             });
                     });
                     }).catch((e) => {
@@ -25,12 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     util.qid("page-content").style.opacity = "1";
                     util.on(util.qid("navbar"), "click", (el) => {
-                        util.qid("page-content").style.opacity = "0";
                         if (el.target.id == "logout-btn") {
+                            util.qid("page-content").style.opacity = "0";
                             auth.signOut();
-                        } else if (el.target.id == "navbar") {
-                            return;
-                        } else {
+                        } else if (el.target.id != "navbar") {
+                            util.qid("page-content").style.opacity = "0";
                             console.log("git endpoint called");
                             var endpoint = el.target.id;
                             fetch("https://api.github.com/repos/robstonner/pf_campaign/contents/" + endpoint,
