@@ -33,13 +33,12 @@ body {
     font-family: 'Rakkas', serif;
     font-size: 2.5rem;
     box-shadow: -10px 0 15px -10px #222222;
-    overflow: scroll;
     scrollbar-width: none;
     transition: 0.5s;
+    overflow-y: scroll;
 }
 
 div#navbar>div {
-    overflow: hidden;
     word-wrap: none;
     white-space: nowrap;
     transition: 0.3s;
