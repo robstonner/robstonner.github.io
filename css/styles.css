@@ -76,10 +76,8 @@ iframe#img-frame {
     background-color: #3b210c;
     box-shadow: 0 0 20px 10px #222222;
     margin: 0 0 0 0;
-}
-
-img {
-    margin-top: 100px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 640px) {
