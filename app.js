@@ -24,7 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
                                 i = 0;
                             }
                             db.collection("documents").doc(id).get().then((snapshot) => {
-                                navbar.innerHTML = navbar.innerHTML + '<div id="' + snapshot.data().endpoint + '" class="ml-3 mb-4 p-3 pl-5 ' + color + ' hover:text-yellow-500 cursor-pointer">' + snapshot.data().title + '</div>';
+                                navbar.innerHTML = navbar.innerHTML 
+                                    + '<div id="' 
+                                    + snapshot.data().type + '@' 
+                                    + snapshot.data().endpoint 
+                                    + '" class="ml-3 mb-4 p-3 pl-5 ' 
+                                    + color 
+                                    + ' hover:text-yellow-500 cursor-pointer">' 
+                                    + snapshot.data().title 
+                                    + '</div>';
                             });
                     });
                     }).catch((e) => {
@@ -38,68 +46,82 @@ document.addEventListener("DOMContentLoaded", () => {
                         } else if (el.target.id != "navbar") {
                             util.qid("page-content").style.opacity = "0";
                             console.log("git endpoint called");
-                            var endpoint = el.target.id;
-                            fetch("https://api.github.com/repos/robstonner/pf_campaign/contents/" + endpoint,
-                                {
-                                    method: "GET",
-                                    headers: {
+                            var type = el.target.id.split('@')[0];
+                            var endpoint = el.target.id.split('@')[1];
+                            if (type == "md") {
+                                fetch("https://api.github.com/repos/robstonner/pf_campaign/contents/" + endpoint,
+                                    {
+                                        method: "GET",
+                                        headers: {
+                                            "Accept": "application/vnd.github.v3+json",
+                                            "Authorization": "TOKEN " + gitauth
+                                        }
+                                    }
+                                ).then((response) => {
+                                    return response.json();
+                                }).then((md) => {
+                                    console.log("page content acquired");
+                                    var html = util.mdf(atob(md.content));
+                                    util.qid("page-content").innerHTML = html;
+                                    util.qid("page-content").style.opacity = "1";
+                                }).catch((e) => {
+                                    console.log(e);
+                                });
+                            } else if (type == "img") {
+                                fetch("https://api.github.com/repos/robstonner/pf_campaign/git/blobs/" + endpoint,
+                                    {
+                                        method: "GET",
+                                        headers: {
                                         "Accept": "application/vnd.github.v3+json",
                                         "Authorization": "TOKEN " + gitauth
                                     }
                                 }
-                            ).then((response) => {
-                                return response.json();
-                            }).then((md) => {
-                                console.log("page content acquired");
-                                var html = util.mdf(atob(md.content));
-                                util.qid("page-content").innerHTML = html;
-                                util.qid("page-content").style.opacity = "1";
-                            }).catch((e) => {
-                                console.log(e);
-                            })
+                                ).then((response) => {
+                                    return response.json();
+                                }).then((content) => {
+                                    console.log("page content acquired");
+                                    util.qid("page-content").innerHTML = 
+                                        '<iframe id="img-frame"'
+                                        + ' align="center" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0"'
+                                        + ' src="data:image/png;base64, ' 
+                                        + content.content + '"'
+                                        + ' class="w-screen h-screen">'
+                                        + '</iframe>'
+                                        // '<div id="img-frame"'
+                                        // + ' class="flex justify-center items-center">'
+                                        // + '<img'
+                                        // + ' class="max-w-full max-h-full"'
+                                        // + ' src="data:image/png;base64, ' 
+                                        // + content.content 
+                                        // + '" ></div>';
+                                    util.qid("page-content").style.opacity = "1";
+                                }).catch((e) => {
+                                    console.log(e);
+                                });
+                            }
                         }
                     });
-                    util.qid("navbar").style.width = "0%";
+                    util.qid("navbar").style.width = "0vw";
                     util.qid("nav-bg").style.display = "none";
                     util.onall([util.qid("nav-btn"), util.qid("nav-bg")], "click", () => {
                         if (window.innerWidth >= 640) {
-                            if (util.qid("navbar").style.width == "0%") {
-                                util.qid("navbar").style.width = "50%";
+                            if (util.qid("navbar").style.width == "0vw") {
+                                util.qid("navbar").style.width = "50vw";
                                 util.qid("nav-bg").style.display = "block";
                             } else {
-                                util.qid("navbar").style.width = "0%";
+                                util.qid("navbar").style.width = "0vw";
                                 util.qid("nav-bg").style.display = "none";
                             }
                         } else {
-                            if (util.qid("navbar").style.width == "0%") {
-                                util.qid("navbar").style.width = "66%";
+                            if (util.qid("navbar").style.width == "0vw") {
+                                util.qid("navbar").style.width = "66vw";
                                 util.qid("nav-bg").style.display = "block";
                             } else {
-                                util.qid("navbar").style.width = "0%";
+                                util.qid("navbar").style.width = "0vw";
                                 util.qid("nav-bg").style.display = "none";
                             }
                         }
                     });
-                    // util.on(util.qid("test"), "click", () => {
-                    //     console.log("test endpoint called");
-                    //     fetch("https://api.github.com/repos/robstonner/pf_campaign/git/blobs/acaf6dbf4ca37ebe997b99744c7db242208bd6d6",
-                    //         {
-                    //             method: "GET",
-                    //             headers: {
-                    //                 "Accept": "application/vnd.github.v3+json",
-                    //                 "Authorization": "TOKEN " + gitauth
-                    //             }
-                    //         }
-                    //     ).then((response) => {
-                    //         return response.json();
-                    //     }).then((content) => {
-                    //         console.log("page content acquired");
-                    //         console.log(content);
-                    //         util.qid("image").src = "data:image/png;base64, " + content.content;
-                    //     }).catch((e) => {
-                    //         console.log(e);
-                    //     });
-                    // });
                 });
         } else {
             util.qid("header").style.opacity = "0";

@@ -70,3 +70,20 @@ button#login-btn {
 div#nav-bg {
     transition: 0.5s;
 }
+
+iframe#img-frame {
+    border: 20px groove #3b210c;
+    background-color: #3b210c;
+    box-shadow: 0 0 20px 10px #222222;
+    margin: 0 0 0 0;
+}
+
+img {
+    margin-top: 100px;
+}
+
+@media (min-width: 640px) {
+    iframe#img-frame {
+        margin: 0 10rem 0 10rem;
+    }
+}
