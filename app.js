@@ -81,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }).then((content) => {
                                     console.log("page content acquired");
                                     util.qid("page-content").innerHTML = 
-                                        '<iframe id="img-frame"'
-                                        + ' align="center" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0"'
+                                        '<div style="-webkit-overflow-scrolling:touch!important;"><iframe id="img-frame"'
+                                        + ' align="center" scrolling="yes" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0"'
                                         + ' src="data:image/png;base64, ' 
                                         + content.content + '"'
                                         + ' class="w-screen h-screen">'
-                                        + '</iframe>'
+                                        + '</iframe></div>'
                                         // '<div id="img-frame"'
                                         // + ' class="flex justify-center items-center">'
                                         // + '<img'
