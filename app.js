@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.log(e);
                     });
                     util.qid("page-content").style.opacity = "1";
+                    util.qid("zoom-in-btn").style.display = "none";
                     util.on(util.qid("navbar"), "click", (el) => {
+                        util.qid("zoom-in-btn").style.display = "none";
                         if (el.target.id == "logout-btn") {
                             util.qid("page-content").style.opacity = "0";
                             auth.signOut();
@@ -81,20 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }).then((content) => {
                                     console.log("page content acquired");
                                     util.qid("page-content").innerHTML = 
-                                        '<div style="-webkit-overflow-scrolling:touch!important;"><iframe id="img-frame"'
-                                        + ' align="center" scrolling="yes" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0"'
-                                        + ' src="data:image/png;base64, ' 
-                                        + content.content + '"'
-                                        + ' class="w-screen h-screen">'
-                                        + '</iframe></div>'
-                                        // '<div id="img-frame"'
-                                        // + ' class="flex justify-center items-center">'
-                                        // + '<img'
-                                        // + ' class="max-w-full max-h-full"'
-                                        // + ' src="data:image/png;base64, ' 
-                                        // + content.content 
-                                        // + '" ></div>';
+                                    '<div id="img-frame" class="w-screen h-screen">'
+                                    + '<img id="img"'
+                                    + ' class=""'
+                                    + ' src="data:image/png;base64, ' 
+                                    + content.content 
+                                    + '" ></div>';
                                     util.qid("page-content").style.opacity = "1";
+                                    util.qid("zoom-in-btn").style.display = "block";
                                 }).catch((e) => {
                                     console.log(e);
                                 });
@@ -119,6 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
                             } else {
                                 util.qid("navbar").style.width = "0vw";
                                 util.qid("nav-bg").style.display = "none";
+                            }
+                        }
+                    });
+                    util.on(util.qid("zoom-in-btn"), "click", () => {
+                        if (util.qid("img")) {
+                            if (util.qid("img").style.maxHeight == "" || util.qid("img").style.maxHeight == "100%") {
+                                util.qid("img").style.maxWidth = "none";
+                                util.qid("img").style.maxHeight = "none";
+                                util.qid("zoom-icon").className = "glyphicon glyphicon-zoom-out";
+                            } else {
+                                util.qid("img").style.maxWidth = "100%";
+                                util.qid("img").style.maxHeight = "100%";
+                                util.qid("zoom-icon").className = "glyphicon glyphicon-zoom-in";
                             }
                         }
                     });
