@@ -23,10 +23,6 @@ body {
 
 #page-content {
     transition: 0.5s;
-    -webkit-overflow-scrolling: touch;
-    touch-action: manipulation;
-    scrollbar-width: none;
-    overflow: scroll;
 }
 
 #header {
@@ -80,7 +76,6 @@ img#img {
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    scrollbar-width: none;
     box-shadow: 0 0 15px 5px #222222;
 }
 
