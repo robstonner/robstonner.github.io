@@ -79,7 +79,6 @@ div#img-frame {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     touch-action: manipulation;
-    scrollbar-width: none;
 }
 
 div#img-frame>img {
