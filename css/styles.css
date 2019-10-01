@@ -26,6 +26,7 @@ body {
     -webkit-overflow-scrolling: touch;
     touch-action: manipulation;
     scrollbar-width: none;
+    overflow: scroll;
 }
 
 #header {
@@ -79,13 +80,18 @@ img#img {
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    scrollbar-width: none;
     box-shadow: 0 0 15px 5px #222222;
 }
 
 div#zoom-in-btn {
-    margin: 0 0 4rem 4rem;
+    margin: 0 0 3.4rem 0;
+    border-left: 2.5rem solid #744210;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: 0.5s;
 }
 
 div#zoom-in-btn>span::before {
-    font-size: 5rem;
+    font-size: 4.75rem;
 }

@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     util.qid("page-content").style.opacity = "1";
                     util.qid("zoom-in-btn").style.display = "none";
+                    util.qid("zoom-in-btn").style.width = "0";
                     util.on(util.qid("navbar"), "click", (el) => {
                         util.qid("zoom-in-btn").style.display = "none";
                         if (el.target.id == "logout-btn") {
@@ -93,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     util.qid("page-content").style.width = "100vw";
                                     util.qid("page-content").style.height = "100vh";
                                     util.qid("page-content").style.opacity = "1";
+                                    util.qid("zoom-in-btn").style.width = "auto";
                                     util.qid("zoom-in-btn").style.display = "block";
                                 }).catch((e) => {
                                     console.log(e);
@@ -126,10 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             if (util.qid("img").style.maxHeight == "" || util.qid("img").style.maxHeight == "100%") {
                                 util.qid("img").style.maxWidth = "none";
                                 util.qid("img").style.maxHeight = "none";
+                                util.qid("page-content").style.display = "block";
                                 util.qid("zoom-icon").className = "glyphicon glyphicon-zoom-out";
                             } else {
                                 util.qid("img").style.maxWidth = "100%";
                                 util.qid("img").style.maxHeight = "100%";
+                                util.qid("page-content").style.display = "flex";
                                 util.qid("zoom-icon").className = "glyphicon glyphicon-zoom-in";
                             }
                         }
