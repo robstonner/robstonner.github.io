@@ -22,6 +22,10 @@ body {
 }
 
 #page-content {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+    scrollbar-width: none;
     transition: 0.5s;
 }
 

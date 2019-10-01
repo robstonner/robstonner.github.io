@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }).then((content) => {
                                     console.log("page content acquired");
                                     util.qid("page-content").innerHTML = 
-                                    '<div id="img-frame" class="relative inset-0">'
+                                    '<div id="img-frame" class="absolute inset-0">'
                                     + '<img id="img"'
                                     + ' class=""'
                                     + ' src="data:image/png;base64, ' 
