@@ -23,6 +23,9 @@ body {
 
 #page-content {
     transition: 0.5s;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+    scrollbar-width: none;
 }
 
 #header {
@@ -71,22 +74,12 @@ div#nav-bg {
     transition: 0.5s;
 }
 
-div#img-frame {
-    border: 20px groove #3b210c;
-    background-color: #3b210c;
-    box-shadow: 0 0 20px 10px #222222;
-    margin: 0 0 0 0;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    touch-action: manipulation;
-    scrollbar-width: none;
-}
-
-div#img-frame>img {
+img#img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    box-shadow: 0 0 15px 5px #222222;
 }
 
 div#zoom-in-btn {
@@ -95,13 +88,4 @@ div#zoom-in-btn {
 
 div#zoom-in-btn>span::before {
     font-size: 5rem;
-}
-
-@media (min-width: 640px) {
-    div#img-frame {
-        margin: 0 10rem 0 10rem;
-    }
-    div#zoom-in-btn {
-        margin: 0 0 4rem 14rem;
-    }
 }

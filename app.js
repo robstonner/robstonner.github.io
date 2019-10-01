@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }).then((md) => {
                                     console.log("page content acquired");
                                     var html = util.mdf(atob(md.content));
+                                    util.qid("page-content").style.width = "100%";
+                                    util.qid("page-content").style.height = "100%";
                                     util.qid("page-content").innerHTML = html;
                                     util.qid("page-content").style.opacity = "1";
                                 }).catch((e) => {
@@ -83,12 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }).then((content) => {
                                     console.log("page content acquired");
                                     util.qid("page-content").innerHTML = 
-                                    '<div id="img-frame" class="fixed inset-0">'
-                                    + '<img id="img"'
-                                    + ' class=""'
+                                    '<img id="img"'
+                                    + ' class="flex-none self-center text-center"'
                                     + ' src="data:image/png;base64, ' 
                                     + content.content 
-                                    + '" ></div>';
+                                    + '" />';
+                                    util.qid("page-content").style.width = "100vw";
+                                    util.qid("page-content").style.height = "100vh";
                                     util.qid("page-content").style.opacity = "1";
                                     util.qid("zoom-in-btn").style.display = "block";
                                 }).catch((e) => {
